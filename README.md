@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ده ملف `README.md` احترافي وشامل، معمول بدقة متناهية بناءً على المعمارية الحقيقية للـ Frontend، والـ dependencies الحديثة جدًا (Next.js 16 + React 19 + Tailwind v4 + pnpm 11)، مع شرح تفصيلي لهيكل الصفحات والـ Routing:
 
-## Getting Started
+```markdown
+# 🖋️ Inkwell — Modern Editorial & Blog Client
 
-First, run the development server:
+A blazing-fast, content-driven modern publishing frontend for the **Inkwell** blog platform. Built with **Next.js 16 (App Router)**, **React 19**, and **Tailwind CSS v4**, seamlessly consuming editorial content via REST APIs powered by **Strapi v5**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Key Features & User Experience
+
+* **Content Aggregation (Home):** Clean editorial layout highlighting featured articles, recent releases, and quick category filtering.
+* **Granular Taxonomy (Categories):** Dedicated category browsing (`Technology`, `History`, `Psychology`, `Science`) with nested article discovery routes.
+* **Dynamic Article Reading (`/articles` & `/articles/[slug]`):**
+  * Card-level previews with responsive Cloudinary thumbnails, excerpts, publication dates, and author tags.
+  * Comprehensive detail views rendering rich body content, publication metadata, and linked author profiles.
+* **Author Profiles (`/users` & `/users/[id]`):** Dedicated community/author index showcasing bios and clickable profile pages linking authors to their published work.
+* **Contextual Navigation:** Seamless nested routes for browsing content either globally or scoped strictly by topic/author.
+* **Modern Minimalist UI:** Ultra-clean aesthetic styled entirely with **Tailwind CSS v4** engine.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+* **Library:** [React 19](https://react.dev/)
+* **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+* **Language:** TypeScript 5
+* **Package Manager:** `pnpm` (v11+)
+* **Data Source:** Headless REST API ([Inkwell Strapi Backend](https://github.com/N3ssar/inkwell-backend))
+
+---
+
+## 🧭 Application Routing Architecture
+
+```text
+app/
+├── page.tsx                     # Landing page with highlights & editorial feed
+├── categories/
+│   ├── page.tsx                 # Taxonomy overview index
+│   └── [category]/
+│       ├── page.tsx             # Filtered articles by category
+│       └── [slug]/page.tsx      # Article reader scoped within category route
+├── articles/
+│   ├── page.tsx                 # Global article archive with preview cards
+│   └── [slug]/page.tsx          # Full-length article reader & author details
+├── users/
+│   ├── page.tsx                 # Writers & contributors directory
+│   └── [id]/page.tsx            # Dedicated author portfolio & bio
+└── layout.tsx                   # Global navigation bar, branding, & footer
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Environment Variables (.env.example)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the root directory:
 
-## Learn More
+```env
+# Strapi API Base URL (Local or Cloud Deployment)
+NEXT_PUBLIC_STRAPI_API_URL=http://localhost:1337
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started Locally
 
-## Deploy on Vercel
+1. **Clone the repository:**
+```bash
+git clone [https://github.com/N3ssar/inkwell-frontend.git](https://github.com/N3ssar/inkwell-frontend.git)
+cd inkwell-frontend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+2. **Install dependencies:**
+```bash
+pnpm install
+
+```
+
+
+3. **Run development server:**
+```bash
+pnpm dev
+
+```
+
+
+4. **Access the application:**
+Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+---
+
+## 📦 Build & Production
+
+```bash
+# Generate optimized production build
+pnpm build
+
+# Run production server
+pnpm start
+
+```
+
+---
+
+## 🔗 Related Repositories
+
+* **Backend Engine:** [Inkwell Backend (Strapi v5 + Neon PostgreSQL + Cloudinary)](https://www.google.com/url?sa=E&source=gmail&q=https://github.com/N3ssar/inkwell-backend)
