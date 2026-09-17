@@ -1,6 +1,3 @@
-ده ملف `README.md` احترافي وشامل، معمول بدقة متناهية بناءً على المعمارية الحقيقية للـ Frontend، والـ dependencies الحديثة جدًا (Next.js 16 + React 19 + Tailwind v4 + pnpm 11)، مع شرح تفصيلي لهيكل الصفحات والـ Routing:
-
-```markdown
 # 🖋️ Inkwell — Modern Editorial & Blog Client
 
 A blazing-fast, content-driven modern publishing frontend for the **Inkwell** blog platform. Built with **Next.js 16 (App Router)**, **React 19**, and **Tailwind CSS v4**, seamlessly consuming editorial content via REST APIs powered by **Strapi v5**.
